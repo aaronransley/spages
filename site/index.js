@@ -1,8 +1,11 @@
-const app = Vue.createApp({
+const { createApp } = Vue;
+const { createRouter, createWebHistory } = VueRouter;
+
+const app = createApp({
   data() {
     return {
       msgHome: "testHome",
-      msgAbout: "testAbout"
+      msgAbout: "testAbout",
     };
   },
 });
@@ -15,8 +18,8 @@ const routes = [
   { path: "/about", component: AboutPage },
 ];
 
-const router = VueRouter.createRouter({
-  history: VueRouter.createWebHashHistory(),
+const router = createRouter({
+  history: createWebHistory(),
   routes,
 });
 
