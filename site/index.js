@@ -2,7 +2,7 @@ const { createApp } = Vue;
 const { createRouter, createWebHistory } = VueRouter;
 
 app.config.globalProperties = {
-  ...app.config.globalProperties,
+  ...app.config?.globalProperties || {},
   msgHome: "testHome",
   msgAbout: "testAbout",
 };
