@@ -1,14 +1,11 @@
 const { createApp } = Vue;
 const { createRouter, createWebHistory } = VueRouter;
 
-const app = createApp({
-  data() {
-    return {
-      msgHome: "testHome",
-      msgAbout: "testAbout",
-    };
-  },
-});
+app.config.globalProperties = {
+  ...app.config.globalProperties,
+  msgHome: "testHome",
+  msgAbout: "testAbout",
+};
 
 const HomePage = { template: `<h1>Home - {{ msgHome }}</h1>` };
 const AboutPage = { template: `<h1>About - {{ msgAbout }}</h1>` };
